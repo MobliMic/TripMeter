@@ -29,6 +29,8 @@
             padding: 6rem;
             font-size: 9rem;
             width: 75%;
+            -ms-word-wrap:;
+            word-wrap: break-word;
         }
 
         .container div.buttons {
@@ -103,10 +105,10 @@
             var currentTick = calculateDistance(startPos.coords.latitude, startPos.coords.longitude,
                     position.coords.latitude, position.coords.longitude);
 
-            contTick = contTick + currentTick.toFixed(4);
+            contTick = contTick + currentTick;
 
             document.getElementById('currentTick').innerHTML = currentTick;
-            document.getElementById('distance').innerHTML = contTick;
+            document.getElementById('distance').innerHTML = contTick.toFixed(4);
 
             window.navigator.vibrate(500);
         });
